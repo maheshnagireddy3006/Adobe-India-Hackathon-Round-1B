@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>PDF Outline Extractor</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="canvas-styles.css">
+</head>
+<body>
+  <div class="header">
+    <h1>PDF Outline Extractor & Persona Analysis</h1>
+    <p>Upload a PDF to see its structured outline and persona-driven analysis.</p>
+  </div>
+  
+  <div class="upload-section">
+    <div class="custom-file-upload">
+      <input type="file" id="pdf-upload" accept="application/pdf">
+      <label for="pdf-upload" class="file-upload-btn">
+        <i class="upload-icon">📁</i>
+        <span>Choose PDF File</span>
+      </label>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <div class="section pdf-section">
+      <h3>📄 PDF Preview</h3>
+      <canvas id="pdf-canvas" width="300" height="200"></canvas>
+    </div>
+    
+    <div class="section outline-section">
+      <h3>📋 Document Outline</h3>
+      <div id="outline" class="content-area"></div>
+    </div>
+    
+    <div class="section content-section">
+      <h3>📖 Full Content</h3>
+      <div id="pdf-content" class="content-area"></div>
+    </div>
+  </div>
+  
+  <div class="persona-card">
+    <div class="persona-header">
+      <h2><i class="persona-icon"></i> Persona Analysis</h2>
+      <p class="persona-subtitle">Define your persona and task to get targeted insights</p>
+    </div>
+    
+    <div class="persona-inputs">
+      <div class="input-group">
+        <label for="persona-input">
+          <span>Persona</span>
+        </label>
+        <input type="text" id="persona-input" placeholder="e.g., Investment Analyst, Data Scientist, Marketing Manager">
+      </div>
+      
+      <div class="input-group">
+        <label for="job-input">
+          <span>Job to be Done</span>
+        </label>
+        <input type="text" id="job-input" placeholder="e.g., Analyze revenue trends, Summarize key findings">
+      </div>
+    </div>
+    
+    <div class="button-container">
+      <button id="analyze-btn" class="analyze-button">
+        <span>Analyze with Persona</span>
+      </button>
+    </div>
+    
+    <div class="analysis-results" id="analysis-results"></div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
